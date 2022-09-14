@@ -1,7 +1,6 @@
-function Works(app) {
-  app.route("works");
-}
+const express = require("express");
+const router = express.Router();
 
-module.exports = {
-  Works,
-};
+router.get("/", (req, res) => res.json({ ok: "ok" }));
+
+module.exports = router;
