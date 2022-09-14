@@ -80,9 +80,45 @@ const deleteById = async (req, res) => {
   }
 };
 
+// todo: delete all workouts
+
+// update a workout
+const updatedById = async (req, res) => {
+  const params = req.params;
+  const payload = req.body;
+
+  if (!isValidObjectId(params.id)) {
+    return res.status(400).json({ message: "not valid id" });
+  }
+
+  try {
+    const changes = await model.findOneAndUpdate(
+      { _id: params.id },
+      {
+        ...payload,
+      }
+    );
+
+    if (!changes) {
+      return res.status(404).json({ message: "not found" });
+    }
+
+    return res.status(200).json({
+      message: "ok",
+      data: {
+        _id: changes.id,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: error.message });
+  }
+};
+
 module.exports = {
   create,
   getAll,
   getById,
   deleteById,
+  updatedById,
 };
