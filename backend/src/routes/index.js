@@ -1,7 +1,9 @@
+const { NotFound } = require("./notFound");
+const { Works } = require("./works");
+
 function AppRoutes(app) {
-  app.get("/", (req, res) => {
-    res.send("ok");
-  });
+  Works(app);
+  NotFound(app);
 }
 
 module.exports = {
