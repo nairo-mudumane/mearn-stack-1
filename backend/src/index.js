@@ -1,9 +1,11 @@
 require("dotenv").config();
 const express = require("express");
-const router = require("./routes/works");
 const app = express();
 const PORT = process.env.PORT;
 
-app.use("/api/", router);
+const workoutsRouter = require("./routes/works");
+
+app.use(express.json());
+app.use("/workouts", workoutsRouter);
 
 app.listen(PORT, () => console.log(`running on port ${PORT}`));
