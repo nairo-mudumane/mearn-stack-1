@@ -10,7 +10,7 @@ app.use(express.json());
 app.use("/workouts", workoutsRouter);
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI, { dbName: process.env.MONGO_DB_NAME })
   .then(() => {
     app.listen(PORT, () => console.log(`running on port ${PORT}`));
   })
