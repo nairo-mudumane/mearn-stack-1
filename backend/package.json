@@ -1,0 +1,19 @@
+{
+  "name": "mearn-stack-1-backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:nairo-mudumane/mearn-stack-1.git",
+  "author": "Nairo Mudumane",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
