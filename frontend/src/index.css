@@ -45,6 +45,12 @@ header a {
   gap: 100px;
 }
 
+.workouts {
+  padding-right: 1rem;
+  max-height: 74vh;
+  overflow: auto;
+}
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
