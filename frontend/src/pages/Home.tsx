@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import * as services from "../services";
+import { WorkoutDetails } from "../components";
 
 export function Home() {
   const {
@@ -37,7 +38,7 @@ export function Home() {
       {workouts && (
         <div className="workouts">
           {workouts.map((workout) => (
-            <p key={workout._id}>{workout.title}</p>
+            <WorkoutDetails key={workout._id} workout={workout} />
           ))}
         </div>
       )}
