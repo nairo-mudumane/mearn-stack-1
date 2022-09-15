@@ -38,7 +38,9 @@ export function WorkoutDetails(props: IWorkoutDetailsProps) {
         <strong>Reps:</strong> {props.workout.load}
       </p>
       <p>{props.workout.createdAt}</p>
-      <span onClick={handleDelete}>{isLoading ? "deleting..." : "delete"}</span>
+      <span className="material-symbols-outlined" onClick={handleDelete}>
+        {isLoading ? "pending" : "delete"}
+      </span>
     </div>
   );
 }

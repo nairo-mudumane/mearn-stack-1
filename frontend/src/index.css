@@ -109,10 +109,24 @@ form button {
   cursor: pointer;
 }
 
+.btn {
+  border: 0;
+  outline: none;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
+
+button:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
+
 form button:disabled {
   opacity: .7;
   cursor: not-allowed;
 }
+
 
 div.error {
   padding: 10px;
