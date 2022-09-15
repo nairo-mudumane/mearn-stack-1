@@ -102,8 +102,8 @@ export function WorkoutForm() {
         onChange={(event) => setReps(event.currentTarget.value)}
       />
 
-      {isError && <div className="error">Not created!</div>}
-      {isDone && <p>Created!</p>}
+      {isError && <div className="error">Workout not created!</div>}
+      {isDone && <div className="success">Workout created!</div>}
 
       <button type="submit" disabled={!isAllFieldsValid()}>
         {isLoading ? "Sending" : "Add workout"}
