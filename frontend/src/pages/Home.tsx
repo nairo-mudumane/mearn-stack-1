@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import * as services from "../services";
-import { WorkoutDetails } from "../components";
+import { WorkoutDetails, WorkoutForm } from "../components";
 
 export function Home() {
   const {
@@ -29,8 +29,6 @@ export function Home() {
     );
   }
 
-  console.log(workouts);
-
   return (
     <div className="home">
       {workouts && (
@@ -40,6 +38,8 @@ export function Home() {
           ))}
         </div>
       )}
+
+      <WorkoutForm />
     </div>
   );
 }
