@@ -33,8 +33,6 @@ export function Home() {
 
   return (
     <div className="home">
-      <h2>Home</h2>
-
       {workouts && (
         <div className="workouts">
           {workouts.map((workout) => (
