@@ -10,8 +10,25 @@ export async function getAll(): Promise<IWorkout[] | undefined> {
       }
     })
     .catch((error) => {
+      console.error(error);
       return undefined;
     });
 
   return workouts;
+}
+
+export async function deleteById(id: string): Promise<boolean> {
+  return await api
+    .delete<IData<Pick<IWorkout, "_id">>>(`/workouts/${id}`)
+    .then((response) => {
+      if (response.status === 200) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      return false;
+    });
 }
